@@ -12,7 +12,6 @@ public class Main {
     public static void main(String[] args) {
         int catMaxRun = 200;
         int dogMaxRun = 500;
-        int catMaxSail = 0;
         int dogMaxSail = 10;
         int catMaxJump = 5;
         double dogMaxJump = 0.5;
