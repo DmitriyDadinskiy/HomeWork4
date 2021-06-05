@@ -48,7 +48,7 @@ public class Main {
             System.out.println(dog.getName() + " Проплыл " + swimDistance + " и устал, потому что больше чем " + dogMaxSail + " метров он не может");
         }
         System.out.println();
-        System.out.println("ивотные должны перепрыгнуть препятствие, введите высоту в метрах");
+        System.out.println("животные должны перепрыгнуть препятствие, введите высоту в метрах");
         double jumpHigh = sc.nextDouble();
         if (jumpHigh <= catMaxJump) {
             System.out.println(cat.getName() + " Прыгнул на " + jumpHigh + " метров и перепрыгнул препятсвие");
