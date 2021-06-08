@@ -1,4 +1,4 @@
-package HomeWork7.Lesson6;
+package HomeWork6.Lesson6;
 
 public class Animal {
     public void run(int length){
