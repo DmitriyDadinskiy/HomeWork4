@@ -13,35 +13,44 @@ public class Main {
 
         String[][] arr = new String[][]
                     {{"1","2","2","2"},
-                    {"1","4","2","2"},
- //                   {"1","k","2","2"}, // Раскоментить для проверки рабоыт исключения
+                    {"1","g","2","2"},
+ //                   {"1","k","2","2"}, // Раскоментить для проверки работы исключения
                     {"0","2","2","2"},
                     {"0","2","2","2"}};
 
         try {
-            chek(arr);
-            System.out.println("С массивом все ок");
+            int total = chek(arr);
+            System.out.println(total);
         } catch (MyArraySizeException e){
             e.printStackTrace();
+            System.out.println("Массив превышен 4х4");
         }
-        System.out.println("Массив превышен 4х4");
-
+        catch (MyArrayDataException e) {
+            System.out.println("Индекс не число " + e.i + "x" + e.j);
+        }
 
     }
 
-    public static void chek(String[][] arr) throws MyArraySizeException {
+    public static int chek(String[][] arr) throws MyArraySizeException, MyArrayDataException {
         int sum = 0;
        if (arr.length != 4) {
             throw new MyArraySizeException(" Массив не ок");
         }
-        for (int i = 0; i < arr.length; i++)
-            for (int j = 0; j < arr.length; i++){
-            sum = sum + Integer.parseInt(arr[i][j]);
-                System.out.println(sum);
-        }
 
+           for (int i = 0; i < arr.length; i++)
+               for (int j = 0; j < arr.length; i++) {
+                   try {
+                       sum = sum + Integer.parseInt(arr[i][j]);
+                       System.out.println(sum);
+                   } catch (NumberFormatException e) {
+                       e.printStackTrace();
+                       throw new MyArrayDataException(i,j); //3 В методе main() вызвать полученный метод, обработать возможные исключения MyArraySizeException и MyArrayDataException и вывести результат расчета.
 
+                   }
+               }
+return sum;
     }
+
 
 }
 //                м{
