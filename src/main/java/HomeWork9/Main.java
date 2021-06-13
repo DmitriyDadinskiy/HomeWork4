@@ -13,7 +13,7 @@ public class Main {
 
         String[][] arr = new String[][]
                     {{"1","2","2","2"},
-                    {"1","g","2","2"},
+                    {"1","4","2","2"},
  //                   {"1","k","2","2"}, // Раскоментить для проверки работы исключения
                     {"0","2","2","2"},
                     {"0","2","2","2"}};
@@ -26,7 +26,7 @@ public class Main {
             System.out.println("Массив превышен 4х4");
         }
         catch (MyArrayDataException e) {
-            System.out.println("Индекс не число " + e.i + "x" + e.j);
+            System.out.println("Индекс не число " + e.i + e.j);
         }
 
     }
