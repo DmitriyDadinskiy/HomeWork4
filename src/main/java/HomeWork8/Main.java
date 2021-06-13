@@ -27,7 +27,7 @@ public class Main {
         System.out.println("Робот не смогу перепрыгнуть, так как прыгнул всего на " + robot.jumpMax);
     }
         System.out.println("");
-        System.out.println("Беговая дорожка раскрутилась до скорость " + treadmill.getMaxSpeed());
+        System.out.println("Беговая дорожка раскрутилась до скорости " + treadmill.getMaxSpeed());
 
     if(human.runMaxSpeed >= treadmill.getMaxSpeed()){
         human.run();
@@ -46,6 +46,7 @@ public class Main {
     }
 
         System.out.println("");
+
 
     }
   //  Создайте два массива: с участниками и препятствиями, и заставьте всех участников пройти этот набор препятствий.
