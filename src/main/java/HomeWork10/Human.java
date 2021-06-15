@@ -6,9 +6,6 @@ public class Human {
         this.sName = sName;
     }
 
-    public String getsName() {
-        return sName;
-    }
 
     @Override
     public int hashCode() {

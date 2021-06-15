@@ -8,9 +8,7 @@ public class Phone {
         Phone = phone;
     }
 
-    public String getPhone() {
-        return Phone;
-    }
+
 
     @Override
     public int hashCode() {
