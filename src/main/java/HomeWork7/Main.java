@@ -11,7 +11,7 @@ public class Main {
         plate.info();
         Cat[] catArray = new Cat[3]; //    5 Создать массив котов и тарелку с едой, попросить всех котов покушать из этой тарелки и потом вывести информацию о сытости котов в консоль.
         catArray[0] = new Cat("Пушистый", 5, false);
-        catArray[1] = new Cat("Пушистый1", 5, false);
+        catArray[1] = new Cat("Пушистый1", 10, false);
         catArray[2] = new Cat("Пушистый2", 5, false);
         for (int i = 0; i < catArray.length; i++) {
             if (catArray[i].isSatiety() == false && catArray[i].getAppetite() <= plate.getFood()) {
