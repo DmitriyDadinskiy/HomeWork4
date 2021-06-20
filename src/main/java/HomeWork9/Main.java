@@ -16,7 +16,7 @@ public class Main {
                     {"1","4","2","2"},
  //                   {"1","k","2","2"}, // Раскоментить для проверки работы исключения
                     {"0","2","2","2"},
-                    {"0","2","2","2"}};
+                    {"0","л","2","2"}};
 
         try {
             int total = chek(arr);
@@ -34,13 +34,13 @@ public class Main {
     public static int chek(String[][] arr) throws MyArraySizeException, MyArrayDataException {
         int sum = 0;
        if (arr.length != 4) {
-            throw new MyArraySizeException(" Массив не ок");
+            throw new MyArraySizeException(" Массив не 4х4");
         }
 
            for (int i = 0; i < arr.length; i++)
                for (int j = 0; j < arr.length; i++) {
                    try {
-                       sum = sum + Integer.parseInt(arr[i][j]);
+                       sum += Integer.parseInt(arr[i][j]);
                        System.out.println(sum);
                    } catch (NumberFormatException e) {
                        e.printStackTrace();
