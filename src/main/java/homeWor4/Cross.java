@@ -26,7 +26,7 @@ public class Cross {
                 break;
             }
             if (isMapFull()) {
-                System.out.println("Пбедила дружба ;)");
+                System.out.println("Победила дружба ;)");
                 break;
             }
             aiTurn();
