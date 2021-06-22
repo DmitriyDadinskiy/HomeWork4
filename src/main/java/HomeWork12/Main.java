@@ -18,8 +18,8 @@ public class Main {
             arr[i] = (float) (arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
    //         System.out.println(arr[i]);
         }
-       System.out.println(System.currentTimeMillis() - a + " мсекунд работает расчещет массива в один поток");
-        System.out.println("или " + (System.currentTimeMillis() - a) / 3600f + " минут");
+       System.out.println(System.currentTimeMillis() - a + " мсекунд работает расчет массива в один поток");
+        System.out.println("или " + (System.currentTimeMillis() - a) / 1000f + " сек");
 //3) Засекают время выполнения: long a = System.currentTimeMillis().
 
         flow();
@@ -45,7 +45,7 @@ public class Main {
         for (int i = 0; i < arr1.length; i++){
             arr[i] = (float) (arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
         }
-        System.out.println(System.currentTimeMillis() - a2 + " мсекунд работает прощет первой части массива");
+        System.out.println(System.currentTimeMillis() - a2 + " мсекунд работает расчет первой части массива");
 
         long a3 = System.currentTimeMillis();
         Thread thread  = new Thread((java.lang.Runnable) Runnable);{
@@ -54,7 +54,7 @@ public class Main {
                 }
         }
         thread.start();
-        System.out.println(System.currentTimeMillis() - a3 + " мсекунд работает прощет парралельного потока второй части массива");
+        System.out.println(System.currentTimeMillis() - a3 + " мсекунд работает расчет парралельного потока второй части массива");
 
         try { // блок ожидания выполнения всех потоков
             thread.join();
@@ -66,7 +66,7 @@ public class Main {
         System.arraycopy(arr2, 0, arr, half, half);
         System.out.println(System.currentTimeMillis() - arrNew + " мсекунд работает склейка массива");
         System.out.println("");
-        System.out.println(System.currentTimeMillis() - allMethods + " мсек. работает прощет с двумя потоками");
+        System.out.println((System.currentTimeMillis() - allMethods)/1000f + " сек. работает расчет с двумя потоками");
 
 
 
