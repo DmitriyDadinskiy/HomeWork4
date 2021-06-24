@@ -66,7 +66,7 @@ public class Main {
         System.arraycopy(arr2, 0, arr, half, half);
         System.out.println(System.currentTimeMillis() - arrNew + " мсекунд работает склейка массива");
         System.out.println("");
-        System.out.println((System.currentTimeMillis() - allMethods)/1000f + " сек. работает расчет с двумя потоками");
+        System.out.println((System.currentTimeMillis() - allMethods)/1000f + " сек. работает метод с двумя потоками");
 
 
 
