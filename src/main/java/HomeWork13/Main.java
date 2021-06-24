@@ -11,8 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Подготовка!!!");
-        CyclicBarrier start = new CyclicBarrier(CARS_COUNT + 1,
-                () -> System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка началась!!!"));
+        CyclicBarrier start = new CyclicBarrier(CARS_COUNT + 1, Main::run);
 
         CountDownLatch winner = new CountDownLatch(CARS_COUNT);
 
@@ -38,6 +37,10 @@ public class Main {
             System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка закончилась!!!");
 
         }
+    }
+
+    private static void run() {
+        System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка началась!!!");
     }
 }
 

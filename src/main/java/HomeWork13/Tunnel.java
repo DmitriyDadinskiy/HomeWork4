@@ -15,7 +15,7 @@ public class Tunnel extends Stage {
     @Override
     public void go(Car c) {
         System.out.println(c.getName() + " готовится к этапу(ждет): " + description);
-        Semaphore startTunnel = new Semaphore(1);
+        Semaphore startTunnel = new Semaphore(2);
 
         try {
             startTunnel.acquire();
