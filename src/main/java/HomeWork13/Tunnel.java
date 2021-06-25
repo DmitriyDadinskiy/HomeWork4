@@ -1,8 +1,7 @@
 package HomeWork13;
 
-import java.util.concurrent.BrokenBarrierException;
-import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;
+import static HomeWork13.Main.CARS_COUNT;
 
 public class Tunnel extends Stage {
 
@@ -15,7 +14,7 @@ public class Tunnel extends Stage {
     @Override
     public void go(Car c) {
         System.out.println(c.getName() + " готовится к этапу(ждет): " + description);
-        Semaphore startTunnel = new Semaphore(2);
+        Semaphore startTunnel = new Semaphore(CARS_COUNT / 2);
 
         try {
             startTunnel.acquire();
