@@ -26,7 +26,7 @@ public class Main {
 
         }
         //Написать метод, который преобразует массив в ArrayList;
-    public static <E> List<E> changeArr(E [] array){  //почему с двух сторон <Е>? идея подсказала сама
+    public static <E> List<E> changeArr(E [] array){  //Е - типизация задали Е и принимаем массив с такой же типизацией Е
         return Arrays.asList(array);
 
     }
