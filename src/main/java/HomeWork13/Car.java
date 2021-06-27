@@ -49,7 +49,7 @@ public class Car implements Runnable{
         }
 
         if (!finishWinner.getAndSet(true)){
-            System.out.println(this.name + " Победил в гонке! ");
+            System.out.println(this.name + " >>> ПОБЕДИЛ в гонке! >>> ");
         } else {
             System.out.println(this.name + " Проиграл в гонке! ");
         }
