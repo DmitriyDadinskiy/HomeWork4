@@ -2,7 +2,7 @@ package HomeWork12;
 
 public class Main {
 
-    static final int SIZE = 10000000;
+    static final int SIZE = 5000000;
     static final int half = SIZE/2;
     private static Object Runnable;
 
@@ -31,7 +31,7 @@ public class Main {
 
         float[] arr = new float[SIZE];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = 1;
+            arr[i] = 1.0f;
 
         }
         long a1 = System.currentTimeMillis();
@@ -42,18 +42,22 @@ public class Main {
         System.out.println(System.currentTimeMillis() - a1 + " мсекунд работает разбивка массива");
 
         long a2 = System.currentTimeMillis();
-        for (int i = 0; i < arr1.length; i++){
-            arr[i] = (float) (arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
-        }
+        Thread thread  = new Thread((java.lang.Runnable) Runnable);
+        {
+            for (int i = 0; i < arr1.length; i++) {
+
+                arr[i] = (float) (arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
+            }
+        }thread.start();
+
         System.out.println(System.currentTimeMillis() - a2 + " мсекунд работает расчет первой части массива");
 
         long a3 = System.currentTimeMillis();
-        Thread thread  = new Thread((java.lang.Runnable) Runnable);{
+
             for (int i = 0; i < arr2.length; i++) {
                 arr[i] = (float) (arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
                 }
-        }
-        thread.start();
+
         System.out.println(System.currentTimeMillis() - a3 + " мсекунд работает расчет парралельного потока второй части массива");
 
         try { // блок ожидания выполнения всех потоков
