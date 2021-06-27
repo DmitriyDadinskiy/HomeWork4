@@ -5,7 +5,7 @@ import static HomeWork13.Main.CARS_COUNT;
 
 public class Tunnel extends Stage {
 
-
+private final Semaphore startTunnel = new Semaphore(CARS_COUNT / 2);
     public Tunnel() {
         this.length = 80;
         this.description = "Тоннель " + length + " метров";
@@ -13,10 +13,9 @@ public class Tunnel extends Stage {
 
     @Override
     public void go(Car c) {
-        System.out.println(c.getName() + " готовится к этапу(ждет): " + description);
-        Semaphore startTunnel = new Semaphore(CARS_COUNT / 2);
 
         try {
+            System.out.println(c.getName() + " готовится к этапу(ждет): " + description);
             startTunnel.acquire();
             System.out.println(c.getName() + " начал этап: " + description);
             Thread.sleep(length / c.getSpeed() * 1000);
