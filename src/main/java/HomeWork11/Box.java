@@ -24,9 +24,9 @@ public class Box<D extends Fruit> {
         tBox.box.addAll(box); // берем коробку и пересыпаем в  коробку
         box.clear();//очищаем коробку из которой пересыпали
     }
-//     public void addFruits(D... addFruits){//передаем на вход несколько фруктов ... - позволяют добавлять в коробку больше одного фрукта
-//        box.addAll(Arrays.asList(addFruits)); // добавляем фрукты
-//         }
+     public void addFruits(D... addFruits){//передаем на вход несколько фруктов ... - позволяют добавлять в коробку больше одного фрукта
+        box.addAll(Arrays.asList(addFruits)); // добавляем фрукты
+         }
          public void addFruits (D fruit, int summ){
              for (int i = 0; i < summ; i++) {
                  box.add(fruit);

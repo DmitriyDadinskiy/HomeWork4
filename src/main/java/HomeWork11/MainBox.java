@@ -17,9 +17,10 @@ public class MainBox {
         orangeBox.addFruits(new Orange(1),10);
         orangeBox1.addFruits(new Orange(1), 50);
        // orangeBox2.addFruits(new Orange(0));
+        appleBox.addFruits(new Apple(1), new Apple(1));
 
 
-        System.out.println("orangeBox " + orangeBox.getWeight());
+        System.out.println("orangeBox " + orangeBox.getWeight() + " appleBox " + appleBox.getWeight());
         System.out.println("orangeBox1  " + orangeBox1.getWeight());
         System.out.println(" orangeBox2 " + orangeBox2.getWeight());
 
