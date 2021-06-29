@@ -24,7 +24,7 @@ public class MainBox {
         System.out.println(" orangeBox2 " + orangeBox2.getWeight());
 
         System.out.println(" orangeBox vs orangeBox2 " + orangeBox.compare(orangeBox2));
-        System.out.println(" orangeBox vs orangeBox2 " + orangeBox.compare(orangeBox2));
+        System.out.println(" appleBox vs appleBox2 " + appleBox.compare(appleBox1));
         orangeBox.replaceAllIn(orangeBox2);
 
         System.out.println("orangeBox = " + orangeBox.getWeight());
