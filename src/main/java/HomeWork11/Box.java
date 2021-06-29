@@ -21,11 +21,16 @@ public class Box<D extends Fruit> {
         return this.getWeight() == box.getWeight();// если равны то ок, если нет то фалсе
     }
     public void replaceAllIn(Box <D> tBox){ // перекладываем коробки с фркутами
-        tBox.box.addAll(box); // берем коробку и пересыпаем в в коробку
-        box.clear();//ощищаем коробку из которой пересыпали
+        tBox.box.addAll(box); // берем коробку и пересыпаем в  коробку
+        box.clear();//очищаем коробку из которой пересыпали
     }
-     public void addFruits(D... addFruits){//передаем на вход несколько фруктов ... - позволяют добавлять в коробку больше одного фрукта
-        box.addAll(Arrays.asList(addFruits)); // добавляем фрукты
+//     public void addFruits(D... addFruits){//передаем на вход несколько фруктов ... - позволяют добавлять в коробку больше одного фрукта
+//        box.addAll(Arrays.asList(addFruits)); // добавляем фрукты
+//         }
+         public void addFruits (D fruit, int summ){
+             for (int i = 0; i < summ; i++) {
+                 box.add(fruit);
+             }
          }
      }
 
